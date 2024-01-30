@@ -1,0 +1,16 @@
+// Function to clean the specified directory
+function cleanDirectory(directoryPath) {
+    try {
+        fs.emptyDirSync(directoryPath);
+        console.log(`Cleaned directory: ${directoryPath}`);
+    } catch (err) {
+        console.error(`Error cleaning directory: ${directoryPath}`);
+        console.error(err);
+    }
+}
+
+// Specify the directories you want to clean before running tests
+const directoriesToClean = ['./reporting'];
+
+// Clean the directories before running tests
+directoriesToClean.forEach(cleanDirectory);
